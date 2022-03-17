@@ -66,7 +66,7 @@ The following default values have been changed:
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"alpine"` |  |
-| image.tag | string | `"3.15.0"` |  |
+| image.tag | string | `"3.15.1"` |  |
 | imagePullSecrets | list | `[]` | pull secrets for the specified image |
 | initContainers | list | `[]` | initContainers to use. Requires a list of valid container specs. |
 | labels | object | `{}` |  |
