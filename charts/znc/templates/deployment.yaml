@@ -40,6 +40,8 @@ spec:
           mountPath: /znc-data-configs-ro
         - name: data
           mountPath: /znc-data
+        - name: tls
+          mountPath: /znc-tls
       containers:
         - name: {{ .Chart.Name }}
           {{- with .Values.securityContext }}
@@ -73,6 +75,9 @@ spec:
         - name: config
           configMap:
             name: {{ include "znc.fullname" . }}
+        - name: tls
+          secret:
+            secretName: {{ include "znc.fullname" . }}
       {{- with .Values.nodeSelector }}
       nodeSelector: {{- toYaml . | nindent 8 }}
       {{- end }}
