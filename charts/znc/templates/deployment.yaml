@@ -40,8 +40,6 @@ spec:
           mountPath: /znc-data-configs-ro
         - name: data
           mountPath: /znc-data
-        - name: tls
-          mountPath: /znc-tls
       containers:
         - name: {{ .Chart.Name }}
           {{- with .Values.securityContext }}
@@ -65,6 +63,8 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /znc-data/
+            - name: tls
+              mountPath: /znc-tls
           {{- with .Values.resources }}
           resources: {{- toYaml . | nindent 12 }}
           {{- end }}
